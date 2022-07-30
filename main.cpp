@@ -37,7 +37,6 @@ public:
         glTranslatef(0, 0, -6.5);
         glPushMatrix();
             //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-
             glPushMatrix();
                 glTranslatef(3, 0, 0);
                 glutSolidTeapot(0.5);
