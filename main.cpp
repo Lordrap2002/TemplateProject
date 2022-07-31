@@ -9,6 +9,10 @@
 #include <iostream>
 #include "glsl.h"
 #include <time.h>
+#include "Arbol.h"
+#include "Casa.h"
+#include "Tetera.h"
+#include "Triangulo.h"
 
 //-----------------------------------------------------------------------------
 
@@ -22,10 +26,13 @@ protected:
    clock_t time0,time1;
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
-
+   Arbol* miArbol;
+   Tetera* miTetera;
+   Triangulo* miTriangulo;
+   Casa* miCasa;
 
 public:
-	myWindow(){}
+    myWindow(){}
 
 	virtual void OnRender(void)
 	{
@@ -37,6 +44,13 @@ public:
         glTranslatef(0, 0, -6.5);
         glPushMatrix();
             //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
+            glPushMatrix();
+                miArbol->DibujarArbol(-3, 0, 0);
+                miTetera->DibujarTetera(3, 0, 0);
+                miTriangulo->DibujarTriangulo(0, 3, 0);
+                miCasa->DibujarCasa(0, 0, 0);
+            glPopMatrix();
+            /*---------Reto de dibujo 2:--------
             glPushMatrix();
                 glTranslatef(3, 0, 0);
                 glutSolidTeapot(0.5);
@@ -201,6 +215,7 @@ public:
                 glTranslatef(0, 3, 0);
                 glutSolidCube(0.5);
             glPopMatrix();
+            ---------------------------------*/
 
         glPopMatrix();
       if (shader) shader->end();
@@ -233,6 +248,11 @@ public:
       time0 = clock();
       timer010 = 0.0f;
       bUp = true;
+
+      miArbol = new Arbol();
+      miTetera = new Tetera();
+      miTriangulo = new Triangulo();
+      miCasa = new Casa();
 
       DemoLight();
 

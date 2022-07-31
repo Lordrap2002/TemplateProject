@@ -28,6 +28,9 @@
     <Filter Include="cwc\source">
       <UniqueIdentifier>{451a2cc6-7fe5-4e0e-b3c4-1def590134bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ClasesPropias">
+      <UniqueIdentifier>{61d29b8f-1d73-4a84-b8ff-fda98a4784a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glew\include\Gl\glew.h">
@@ -68,6 +71,18 @@
     </ClInclude>
     <ClInclude Include="cwc\include\glWindow.h">
       <Filter>cwc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbol.h">
+      <Filter>ClasesPropias</Filter>
+    </ClInclude>
+    <ClInclude Include="Casa.h">
+      <Filter>ClasesPropias</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetera.h">
+      <Filter>ClasesPropias</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangulo.h">
+      <Filter>ClasesPropias</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +168,18 @@
       <Filter>cwc\source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Arbol.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
+    <ClCompile Include="Casa.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetera.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangulo.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="freeglut\source\freeglutdll.def">
