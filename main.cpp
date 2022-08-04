@@ -13,6 +13,8 @@
 #include "Casa.h"
 #include "Tetera.h"
 #include "Triangulo.h"
+#include "Cola.h"
+#include "Cara.h"
 
 //-----------------------------------------------------------------------------
 
@@ -30,6 +32,8 @@ protected:
    Tetera* miTetera;
    Triangulo* miTriangulo;
    Casa* miCasa;
+   Cola* miCola;
+   Cara* miCara;
 
 public:
     myWindow(){}
@@ -41,16 +45,35 @@ public:
       //timer010 = 0.09; //for screenshot!
       glPushMatrix();
       if (shader) shader->begin();
-        glTranslatef(0, 0, -6.5);
+        glTranslatef(0, 0, -50);
         glPushMatrix();
             //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
+            
+            //---------Reto de dibujo 4:--------
+            glPushMatrix();
+                miCola->dibujarCola(7, 5, 0);
+                miCola->dibujarCola(-7, 5, 0);
+                miCara->dibujarCara(0, -20, 0);
+                glPushMatrix();
+                    glTranslatef(0, -5, 0);
+                    glutSolidCylinder(5, 1, 20, 20);
+                glPopMatrix();
+            glPopMatrix();
+            //----------------------------------
+
+            //---------Reto de dibujo 3:--------
+            /*
             glPushMatrix();
                 miArbol->DibujarArbol(-3, 0, 0);
                 miTetera->DibujarTetera(3, 0, 0);
                 miTriangulo->DibujarTriangulo(0, 3, 0);
                 miCasa->DibujarCasa(0, 0, 0);
             glPopMatrix();
-            /*---------Reto de dibujo 2:--------
+            */
+            //----------------------------------
+
+            //---------Reto de dibujo 2:--------
+            /*
             glPushMatrix();
                 glTranslatef(3, 0, 0);
                 glutSolidTeapot(0.5);
@@ -215,7 +238,8 @@ public:
                 glTranslatef(0, 3, 0);
                 glutSolidCube(0.5);
             glPopMatrix();
-            ---------------------------------*/
+            */
+            //----------------------------------
 
         glPopMatrix();
       if (shader) shader->end();
@@ -253,6 +277,8 @@ public:
       miTetera = new Tetera();
       miTriangulo = new Triangulo();
       miCasa = new Casa();
+      miCola = new Cola();
+      miCara = new Cara();
 
       DemoLight();
 

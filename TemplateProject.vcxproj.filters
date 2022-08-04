@@ -84,6 +84,12 @@
     <ClInclude Include="Triangulo.h">
       <Filter>ClasesPropias</Filter>
     </ClInclude>
+    <ClInclude Include="Cola.h">
+      <Filter>ClasesPropias</Filter>
+    </ClInclude>
+    <ClInclude Include="Cara.h">
+      <Filter>ClasesPropias</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glew\source\glew.c">
@@ -178,6 +184,12 @@
       <Filter>ClasesPropias</Filter>
     </ClCompile>
     <ClCompile Include="Triangulo.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
+    <ClCompile Include="Cola.cpp">
+      <Filter>ClasesPropias</Filter>
+    </ClCompile>
+    <ClCompile Include="Cara.cpp">
       <Filter>ClasesPropias</Filter>
     </ClCompile>
   </ItemGroup>
